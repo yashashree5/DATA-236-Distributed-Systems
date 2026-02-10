@@ -1,7 +1,4 @@
-# DATA-236 – Homework 2
-
-## Course
-DATA-236: Distributed Systems
+## DATA-236 – Homework 2
 
 ## Overview
 This assignment demonstrates frontend development, backend API implementation, and a stateful multi-agent system using LangGraph.

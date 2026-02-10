@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="overlay">
+    <header class="header">
+      <h1>Library Book Management System</h1>
+      <p>Manage books easily – add, update, and delete</p>
+    </header>
+
+    <main class="container">
+      <div class="actions">
+        <a href="add.html" class="btn">Add New Book</a>
+        <button class="btn danger">Delete Last Book</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>The Hobbit</td>
+            <td>J.R.R. Tolkien</td>
+            <td>
+              <a href="update.html" class="btn small">Update</a>
+              <a href="delete.html" class="btn small danger">Delete</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>1984</td>
+            <td>George Orwell</td>
+            <td>
+              <a href="update.html" class="btn small">Update</a>
+              <a href="delete.html" class="btn small danger">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Library Management System</p>
+    </footer>
+  </div>
+
+</body>
+</html>

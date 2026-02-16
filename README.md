@@ -11,5 +11,3 @@ This course focuses on the design, development, and deployment of modern distrib
 - Distributed Messaging Frameworks
 - Building Distributed Systems with Cloud Technologies
 - REST (Representational State Transfer) Service Development and Deployment
-
-## 📂 Repository Structure

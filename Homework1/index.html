@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1-Yashashree Shinde</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #3b2412;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+            url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 45px 20px;
+        }
+
+        .container {
+            background: #f5ebe0;
+            border-radius: 12px;
+            box-shadow:
+                0 4px 10px rgba(0, 0, 0, 0.3),
+                0 15px 40px rgba(0, 0, 0, 0.2);
+            padding: 46px 42px;
+            width: 100%;
+            max-width: 660px;
+            border-top: 5px solid #8b5a2b;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            color: #5c3d1e;
+            margin-bottom: 6px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #8a7260;
+            font-size: 0.92rem;
+            margin-bottom: 34px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #6b4423;
+            margin-bottom: 7px;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 2px solid #d4c4b0;
+            border-radius: 8px;
+            font-size: 0.93rem;
+            font-family: inherit;
+            color: #3d2b1f;
+            background-color: #faf4ec;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #8b5a2b;
+            box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.18);
+            background-color: #fff8f0;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #b09a84;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.55;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: #faf4ec;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b4423' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #8b5a2b;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-group label {
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 500;
+            color: #6b5a4a;
+            font-size: 0.88rem;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #8b5a2b, #a67c52);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 14px;
+            letter-spacing: 0.5px;
+            transition: transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 3px 8px rgba(139, 90, 43, 0.35);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(139, 90, 43, 0.45);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(139, 90, 43, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Heading -->
+        <h1>Blog Publishing Portal</h1>
+        
+        <!-- Form -->
+        <form id="blogForm" onsubmit="handleSubmit(event)">
+
+            <!-- Blog title -->
+            <div class="form-group">
+                <label for="blogTitle">Blog Title</label>
+                <input type="text" id="blogTitle" name="blogTitle"
+                       placeholder="Enter the title of your blog"
+                       required autofocus>
+            </div>
+
+            <!-- Author name -->
+            <div class="form-group">
+                <label for="authorName">Author Name</label>
+                <input type="text" id="authorName" name="authorName"
+                       placeholder="Enter your name"
+                       required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email"
+                       required>
+            </div>
+
+            <!-- Blog content -->
+            <div class="form-group">
+                <label for="blogContent">Blog Content</label>
+                <textarea id="blogContent" name="blogContent"
+                          placeholder="Write your content here…"
+                          required></textarea>
+            </div>
+
+            <!-- Category dropdown -->
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="Technology">Technology</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Education">Education</option>
+                </select>
+            </div>
+
+            <!-- Terms checkbox -->
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="termsCheckbox" name="termsCheckbox">
+                    <label for="termsCheckbox">I agree to the terms and conditions.</label>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="submit-btn">Publish Blog</button>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
